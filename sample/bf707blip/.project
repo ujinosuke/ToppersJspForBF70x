@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>sample1_bf707ezkit</name>
+	<name>sample1_bf707blip</name>
 	<comment></comment>
 	<projects>
 	</projects>
@@ -52,10 +52,4 @@
 			<locationURI>PARENT-1-PROJECT_LOC/sample1.h</locationURI>
 		</link>
 	</linkedResources>
-	<variableList>
-		<variable>
-			<name>CCES</name>
-			<value>file:/C:/Analog%20Devices/CrossCore%20Embedded%20Studio%202.0.0</value>
-		</variable>
-	</variableList>
 </projectDescription>

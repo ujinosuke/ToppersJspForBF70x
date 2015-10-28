@@ -1,0 +1,6 @@
+ArtifactType=org.eclipse.cdt.build.core.buildArtefactType.exe
+Processor=ADSP-BF707
+Revision=1.0
+adi_initialize.c.lastgenerated=1446070149777
+adi_initialize.h.lastgenerated=1446070150261
+eclipse.preferences.version=1
