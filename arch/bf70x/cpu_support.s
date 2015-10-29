@@ -68,8 +68,10 @@
 #define	DEBUG_ISR_IN_ASM_CALL_C		(0)
 
 /*
- *	Workaround Define
+ *	Workaround Define       
  */
+
+//#define WORKAROUND_REV00			// Rev0.0の割り込みNEST Workaround。Rev0.0のときはアセンブラオプションに記述すること 
 #define WORKAROUND_nestcheck		(0)
 
 #define	_MACRO_ONLY
@@ -437,7 +439,9 @@ return_as_task:					// タスクコンテキスト状態での戻り
 	reti = r0;		
 	
 	restore_regs_0
+#ifdef WORKAROUND_REV00
 	excpt	0;
+#endif
 	rti;
 
 get_back_nest:
@@ -452,7 +456,9 @@ get_back_nest:
 	reti = [sp++];				// 戻り番地を復帰。以後rtiまで割込み禁止
 
 	restore_regs_0
+#ifdef WORKAROUND_REV00
 	excpt	0;
+#endif
 	rti;
 Ivg12Entry.end:
 
@@ -506,6 +512,7 @@ ExpEntry:
 	[--sp] = p0;
 	[--sp] = astat;
 	
+#ifdef WORKAROUND_REV00
 	r0 = seqstat;	
 	r0 <<= 26;
 	r0 >>= 26;
@@ -529,6 +536,7 @@ not_nested:
 	p0 = [sp++];
 	r0 = [sp++];
 	rtx;
+#endif
 
 
 exception_hander:
@@ -712,7 +720,9 @@ UNMANAGED_ISR_IN_ASM:
 	p0 = [sp++];
 	r1 = [sp++];
 	r0 = [sp++];
+#ifdef WORKAROUND_REV00
 	excpt	0;
+#endif
 	rti;
 	
 //----------------------------------------------------------
@@ -765,7 +775,9 @@ UNMANAGED_ISR_IN_C:
 	p0 = [sp++];
 	r1 = [sp++];
 	r0 = [sp++];
+#ifdef WORKAROUND_REV00
 	excpt	0;
+#endif
 	rti;
 	
 //----------------------------------------------------------
@@ -781,7 +793,9 @@ TOPPERS_MANAGED_ISR:
 	p0 = [sp++];
 	r1 = [sp++];
 	r0 = [sp++];
+#ifdef WORKAROUND_REV00
 	excpt 0;
+#endif
 	rti;
 Ivg11Entry.end:
 
