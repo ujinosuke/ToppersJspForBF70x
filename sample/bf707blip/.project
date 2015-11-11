@@ -52,4 +52,10 @@
 			<locationURI>PARENT-1-PROJECT_LOC/sample1.h</locationURI>
 		</link>
 	</linkedResources>
+	<variableList>
+		<variable>
+			<name>CCES</name>
+			<value>file:/C:/Analog%20Devices/CrossCore%20Embedded%20Studio%202.0.0</value>
+		</variable>
+	</variableList>
 </projectDescription>
